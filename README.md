@@ -1,13 +1,14 @@
 # File: README.md
 
 # API Script 
-An API script configuration at the top, a fetch function that only makes the request, a process function that only transforms data, and an output function that only presents results. Keeping them separate makes the code easier to test, debug, and extend. Day 25 is the Week 5 project: combining everything into a multi-endpoint API dashboard
+An API script with a fetch function, a process function, and an output function.
+Applied on simulated readings of a dairy farm cooperative, it makes requests, transforms data, and presents the results.
 
 ## What It Does
 
-- Flag farms with minimum  produce of 10L per day
 - Process simulated readings from farm collection
-- Returns a summary report clearly indicating number of farms collescted and total litres collected
+- Flags farms with daily produce that are below the set target (10 L)
+- Returns a summary report clearly indicating number of  farms  collected and total litres collected
 
 
 ## Setup
@@ -38,5 +39,4 @@ def process_readings(readings, min_litres):
 ## Stack
 
 Python
-
 Built-in Modules: `json`

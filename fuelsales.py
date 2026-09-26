@@ -8,7 +8,7 @@ reader = csv.DictReader(io.StringIO(sales_data))
 below = []
 above = []
 minimum_revenue = 80000
-next(reader)  # Skip the header row
+ # Skip the header row
 
 
 for row in reader:
@@ -29,19 +29,25 @@ row_fmt    = "{Date:<12} | {Product:<10} | {Quantity:>8} | {Unit Price:>10} | {T
 
 # Print main heading
 print("FUEL SALES REPORT")
+print(header_fmt.format("Date", "Product", "Quantity", "Unit Price", "Total Revenue"))
+print("-" * 75)
 
 for r in below:
     print(row_fmt.format(**r))
+    
 
 for r in above:
     print(row_fmt.format(**r))
+    
 
 #Below minimum group
+print()
 print("BELOW MINIMUM REVENUE THRESHOLD")
 print(header_fmt.format("Date", "Product", "Quantity", "Unit Price", "Total Revenue"))
 print("-" * 75)
 for r in below:
     print(row_fmt.format(**r))
+    print()
 
 #Above minimum group
 print("ABOVE MINIMUM REVENUE THRESHOLD")

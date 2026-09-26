@@ -50,3 +50,7 @@ def print_farm_report(cooperative, summary):
 readings = fetch_farm_readings()
 summary  = process_readings(readings, MIN_LITRES)
 print_farm_report(COOPERATIVE, summary)
+
+#Export results to JSON
+with open("dairycoop_results.json", "w") as f:
+    json.dump(summary, f, indent=2)

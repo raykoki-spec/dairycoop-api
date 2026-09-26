@@ -1,4 +1,5 @@
 import io, csv
+import json
 
 #Simulated CSV file
 
@@ -52,3 +53,7 @@ print(header_fmt.format("Date", "Town", "Product", "Units", "Unit Price", "Total
 print("-" * 75)
 for r in above:
     print(row_fmt.format(**r))
+
+#Export results to JSON
+with open("bakerysales_results.json", "w") as f:
+    json.dump({"below": below, "above": above}, f, indent=2)

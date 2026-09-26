@@ -1,3 +1,4 @@
+import json
 import csv, io
 sales_data = """Date,Product,Quantity,Unit Price
 2026-09-01,Petrol,500,221
@@ -55,3 +56,12 @@ print(header_fmt.format("Date", "Product", "Quantity", "Unit Price", "Total Reve
 print("-" * 75)
 for r in above:
     print(row_fmt.format(**r))
+
+#Export results to JSON
+
+
+with open("fuelsales_results.json", "w") as f:
+    json.dump({"below": below, "above": above}, f, indent=2)
+
+print("\nJSON Export:")
+print(json.dumps({"below": below, "above": above}, indent=1))
